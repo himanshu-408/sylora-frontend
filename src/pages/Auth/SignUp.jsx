@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useNavigate} from "react-router-dom"
-import loginImage from "../../assets/login-bg-image.webp"
+import loginImage from "../../assets/login-image.jpg"
 import axiosInstance from '../../utils/axiosInstance'
 // import { validateEmail } from '../../utils/helper';
 
