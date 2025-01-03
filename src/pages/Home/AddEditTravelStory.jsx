@@ -26,10 +26,10 @@ const AddEditTravelStory = ({
     console.log("storyImg is ", storyImg);
     try{
       let imageUrl = "";
-      if(storyImg){
-        const imgUploadRes = await uploadImage(storyImg);
-        imageUrl = imgUploadRes.imageUrl || "";
-      }
+      // if(storyImg){
+      //   const imgUploadRes = await uploadImage(storyImg);
+      //   imageUrl = imgUploadRes.imageUrl || "";
+      // }
       const response = await axiosInstance.post("/add-travel-story", {
         title,
         story,
@@ -67,15 +67,15 @@ const AddEditTravelStory = ({
           : moment().valueOf(),
       }
 
-      if(typeof storyImg === 'object'){
-        const imgUploadRes = await uploadImage(storyImg);
-        imageUrl = imgUploadRes.imageUrl || "";
+      // if(typeof storyImg === 'object'){
+      //   const imgUploadRes = await uploadImage(storyImg);
+      //   imageUrl = imgUploadRes.imageUrl || "";
 
-        postData = {
-          ...postData,
-          imageUrl: imageUrl,
-        };
-      }
+      //   postData = {
+      //     ...postData,
+      //     imageUrl: imageUrl,
+      //   };
+      // }
 
       
       const response = await axiosInstance.put("/edit-story/" + storyId, postData);
@@ -101,10 +101,6 @@ const AddEditTravelStory = ({
 
     if(!title){
       setError("Please enter the title")
-      return;
-    }
-    if(!storyImg){
-      setError("Please enter the storyImg")
       return;
     }
     if(!story){
