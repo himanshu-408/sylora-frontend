@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://sylora.onrender.com'
+export const BASE_URL = 'https://sylora-api.onrender.com'
