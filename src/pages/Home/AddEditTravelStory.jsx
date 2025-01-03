@@ -23,6 +23,7 @@ const AddEditTravelStory = ({
 
 
   const addNewTravelStory = async () => {
+    console.log("storyImg is ", storyImg);
     try{
       let imageUrl = "";
       if(storyImg){
@@ -96,15 +97,16 @@ const AddEditTravelStory = ({
 
   const handleAddOrUpdateClick = () => {
     console.log({title, storyImg, story, visitedLocation, visitedDate});
+    
 
     if(!title){
       setError("Please enter the title")
       return;
     }
-    // if(!storyImg){
-    //   setError("Please enter the storyImg")
-    //   return;
-    // }
+    if(!storyImg){
+      setError("Please enter the storyImg")
+      return;
+    }
     if(!story){
       setError("Please enter the story")
       return;

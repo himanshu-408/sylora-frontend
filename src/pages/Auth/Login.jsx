@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import {useNavigate} from "react-router-dom"
 import loginImage from "../../assets/login-image.jpg"
 import axiosInstance from '../../utils/axiosInstance'
-// import { validateEmail } from '../../utils/helper';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,10 +13,6 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // if(!validateEmail(email)){
-    //   setError("Please enter a valid email.")
-    //   return;
-    // }
 
     try{
       const response = await axiosInstance.post("/login", {
